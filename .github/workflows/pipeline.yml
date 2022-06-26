@@ -73,6 +73,6 @@ jobs:
             severity: error
             color: '#ff002f'
             text: Build failed
-            description: 'Commit which caused the failure: ${{ github.sha }} '
+            description: 'Commit: https://github.com/${{ github.repository }}/commit/${{ github.sha }} '
             details: 'Committer: ${{ github.actor }}'
             webhookUrl: ${{ secrets.DISCORD_HOOK }}
