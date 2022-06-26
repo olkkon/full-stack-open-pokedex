@@ -34,4 +34,5 @@ jobs:
           heroku_email: ${{secrets.HEROKU_API_EMAIL}}
           procfile: "web: npm run start-prod"
           healthcheck: "https://fso-cicd22.herokuapp.com/health"
-          checkstring: "ok"
+          checkstring: "ok1"
+          rollbackonhealthcheckfailed: true
