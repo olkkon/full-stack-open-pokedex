@@ -10,3 +10,11 @@ app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log('server started on port 5000')
 })
+
+app.get('/health', (_req, res) => {
+  res.send('ok')
+})
+
+app.get('/version', (_req, res) => {
+  res.send('1')
+})
