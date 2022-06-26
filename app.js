@@ -18,5 +18,3 @@ app.get('/health', (_req, res) => {
 app.get('/version', (_req, res) => {
   res.send('1')
 })
-
-// new random comment
