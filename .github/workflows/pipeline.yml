@@ -54,11 +54,12 @@ jobs:
           DEFAULT_BUMP: patch
 
   notify_discord:
+    needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
       - name: Test Success
         uses: rjstone/discord-webhook-notify@v1
-        if: success()
+        if: ${{ needs.simple_deployment_pipeline.result == 'success' }}
         with:
             severity: info
             color: '#37ff00'
@@ -67,7 +68,7 @@ jobs:
             webhookUrl: ${{ secrets.DISCORD_HOOK }}
       - name: Test Failure
         uses: rjstone/discord-webhook-notify@v1
-        if: failure()
+        if: ${{ needs.simple_deployment_pipeline.result == 'failure' }}
         with:
             severity: error
             color: '#ff002f'
