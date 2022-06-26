@@ -5,9 +5,9 @@ describe('Pokedex', function() {
     cy.contains('Pokémon and Pokémon character names are trademarks of Nintendo.')
   })
   it('pokemon page can be navigated to', function() {
-    cy.visit('http://localhost:5000/pokemon/bagon')
-    cy.contains('bagon')
-    cy.contains('rock head')
-    cy.contains('sheer force')
+    cy.visit('http://localhost:5000/pokemon/doduo')
+    cy.contains('doduo')
+    cy.contains('run away')
+    cy.contains('tangled feet')
   })
 })
